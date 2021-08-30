@@ -1,0 +1,15 @@
+[global]
+# Use block device as filesystem doesn't support O_DIRECT.  This will need to be unmounted
+filename=/dev/sda26
+direct=1
+
+# Block size we want to test
+bs=512k
+
+# Size we are going to read or write. 'fill_device=1' instead fills the entire device
+size=1G
+
+[performance_write]
+description="Measure sequential write performance"
+rw=write
+
